@@ -88,15 +88,14 @@ export default function WallCalendar() {
   return (
     <div
       className="
-        h-screen w-full flex items-center justify-center
+        min-h-screen w-full py-8 sm:py-12 flex items-center justify-center
         bg-gradient-to-br from-slate-100 to-slate-200
-        relative overflow-hidden transition-colors duration-300
+        relative overflow-x-hidden overflow-y-auto transition-colors duration-300
       "
     >
-      {/* Vignette */}
       <div
         className="
-          absolute inset-0 pointer-events-none
+          fixed inset-0 pointer-events-none
           bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.05)_100%)]
         "
       />
@@ -130,15 +129,16 @@ export default function WallCalendar() {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         className="
-          relative aspect-[3/4] w-[min(92vw,560px)]
+          relative w-[min(92vw,400px)] md:w-[min(90vw,560px)]
+          h-auto min-h-[650px]
           flex flex-col
           bg-gradient-to-b from-white to-slate-50
           backdrop-blur-xl
           border border-slate-200/60
           ring-1 ring-black/5
-          shadow-[0_10px_30px_rgba(0,0,0,0.08),0_30px_60px_rgba(0,0,0,0.12)]
+          shadow-[0_12px_40px_rgba(0,0,0,0.1),0_40px_80px_rgba(0,0,0,0.15)] md:shadow-[0_20px_50px_rgba(0,0,0,0.15),0_50px_100px_rgba(0,0,0,0.2)]
           paper-texture
-          rounded-b-lg sm:rounded-none
+          rounded-xl sm:rounded-b-lg sm:rounded-none
           transition-colors duration-300
         "
       >
@@ -165,7 +165,7 @@ export default function WallCalendar() {
             >
               <path
                 d="M0,60 L350,0 L520,60 L800,0 L800,60 L0,60 Z"
-                className="fill-white drop-shadow-[0_-4px_6px_rgba(0,0,0,0.08)]"
+                className="fill-white drop-shadow-[0_-6px_10px_rgba(0,0,0,0.08)]"
               />
             </svg>
           </div>
@@ -174,8 +174,8 @@ export default function WallCalendar() {
           <div
             className="
               flex flex-col md:flex-row
-              p-2 sm:p-2.5 md:p-3
-              gap-2 sm:gap-3 md:gap-4
+              p-4 sm:p-5 md:p-6
+              gap-4 md:gap-5
               flex-1
             "
           >

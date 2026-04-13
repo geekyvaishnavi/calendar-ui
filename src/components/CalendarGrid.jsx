@@ -36,7 +36,6 @@ const CalendarGrid = ({
 
     return day >= start && day <= end;
   };
-
   const hasNoteForDay = (day) => {
     return notes.some((n) => {
       if (!n.date || !n.content?.trim()) return false;
@@ -45,14 +44,14 @@ const CalendarGrid = ({
   };
 
   return (
-    <div className="flex-1 select-none px-3">
+    <div className="flex-[0.6] sm:flex-1 select-none px-2 sm:px-2 md:px-3">
 
       {/* Week Header */}
       <div className="grid grid-cols-7 mb-2">
         {['MON','TUE','WED','THU','FRI','SAT','SUN'].map((d, i) => (
           <div
             key={d}
-            className="text-center text-[11px] font-semibold tracking-wider text-slate-500"
+            className="text-center text-[10px] sm:text-[11px] font-semibold tracking-wider text-slate-500"
             style={{ color: i >= 5 ? themeColor : undefined }}
           >
             {d}
@@ -107,14 +106,14 @@ const CalendarGrid = ({
               <button
                 onClick={() => !isDragging && onDateClick(day)}
                 className={`
-                  w-full h-[36px]
+                  w-full max-w-[40px] aspect-square mx-auto
                   flex items-center justify-center
-                  text-[13px]
-                  rounded-md
+                  text-[14px]
+                  rounded-full
                   relative z-10
 
                   transition-all duration-150 ease-out
-                  cursor-${isDragging ? "grabbing" : "pointer"}
+                  ${isDragging ? "cursor-grabbing" : "cursor-pointer"}
 
                   ${!isCurrentMonth ? 'text-slate-300' : 'text-slate-700'}
                   ${isStart || isEnd ? 'text-white font-semibold' : ''}
@@ -153,10 +152,10 @@ const CalendarGrid = ({
               {/* Selection */}
               {(isStart || isEnd) && (
                 <div
-                  className="absolute inset-[6px] rounded-md z-0"
+                  className="absolute inset-[3px] rounded-full z-0"
                   style={{
                     backgroundColor: themeColor,
-                    boxShadow: `0 6px 18px ${themeColor}30, inset 0 1px 0 rgba(255,255,255,0.4)`
+                    boxShadow: `0 6px 12px ${themeColor}40, inset 0 1px 0 rgba(255,255,255,0.4)`
                   }}
                 />
               )}

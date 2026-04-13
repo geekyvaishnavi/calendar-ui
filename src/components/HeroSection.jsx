@@ -35,7 +35,7 @@ const HeroSection = ({
   };
 
   return (
-    <div className="relative w-full h-[300px] sm:h-[340px] md:h-[380px] overflow-hidden perspective-1000">
+    <div className="relative w-full shrink-0 h-[220px] sm:h-[340px] md:h-[380px] overflow-hidden perspective-1000">
 
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
@@ -63,7 +63,7 @@ const HeroSection = ({
         <button
           onClick={onToday}
           style={{ backgroundColor: `${themeColor}66` }}
-          className="px-3 py-[5px] text-white rounded-md backdrop-blur-sm text-[10px] font-semibold tracking-wide uppercase transition border border-white/10 hover:brightness-110 active:scale-95"
+          className="px-4 py-[6px] text-white rounded-full backdrop-blur-md text-[10px] sm:text-[11px] font-bold tracking-widest uppercase transition-all duration-300 border border-white/30 hover:bg-white/20 hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)] active:scale-95"
         >
           Today
         </button>
@@ -71,7 +71,7 @@ const HeroSection = ({
         <button
           onClick={onPrev}
           style={{ backgroundColor: `${themeColor}66` }}
-          className="p-1.5 text-white rounded-md backdrop-blur-sm transition border border-white/10 hover:brightness-110 active:scale-95"
+          className="p-2.5 text-white rounded-full backdrop-blur-md transition-all duration-300 border border-white/30 hover:bg-white/20 hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)] active:scale-95"
         >
           <ChevronLeft size={16} />
         </button>
@@ -79,9 +79,9 @@ const HeroSection = ({
         <button
           onClick={onNext}
           style={{ backgroundColor: `${themeColor}66` }}
-          className="p-1.5 text-white rounded-md backdrop-blur-sm transition border border-white/10 hover:brightness-110 active:scale-95"
+          className="p-2.5 text-white rounded-full backdrop-blur-md transition-all duration-300 border border-white/30 hover:bg-white/20 hover:shadow-[0_4px_12px_rgba(0,0,0,0.1)] active:scale-95"
         >
-          <ChevronRight size={16} />
+          <ChevronRight size={18} />
         </button>
       </div>
 
@@ -113,7 +113,7 @@ const HeroSection = ({
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl sm:text-7xl font-display font-bold uppercase tracking-tighter -mt-1 sm:-mt-2"
+              className="text-5xl sm:text-7xl font-display font-black uppercase tracking-tighter -mt-1 sm:-mt-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)]"
             >
               {format(currentDate, 'MMMM')}
             </motion.div>

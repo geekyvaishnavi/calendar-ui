@@ -79,9 +79,9 @@ const NotesSection = ({ notes, setNotes, range, themeColor, isDarkMode }) => {
   };
 
   return (
-    <div className="w-full lg:w-[240px] flex flex-col px-3">
+    <div className="w-full sm:w-[160px] md:w-[200px] flex flex-col px-1 sm:px-2 md:px-3">
       <h2
-        className="text-[13px] font-semibold tracking-[0.12em] uppercase mb-2"
+        className="text-[12px] sm:text-[13px] font-semibold tracking-widest sm:tracking-[0.12em] uppercase mb-1 sm:mb-2"
         style={{ color: themeColor }}
       >
         Notes
@@ -97,7 +97,7 @@ const NotesSection = ({ notes, setNotes, range, themeColor, isDarkMode }) => {
       <div
         onClick={() => textareaRef.current?.focus()}
         className="
-          relative flex-1 min-h-[200px] cursor-text
+          relative flex-1 min-h-[120px] sm:min-h-[200px] cursor-text
           bg-white/70 backdrop-blur-sm
           rounded-lg
           transition-all duration-200
@@ -132,7 +132,7 @@ const NotesSection = ({ notes, setNotes, range, themeColor, isDarkMode }) => {
           placeholder="Type…"
           className="
             w-full h-full bg-transparent border-none outline-none resize-none
-            text-[14px] leading-[26px]
+            text-[13px] sm:text-[14px] leading-[26px]
             px-2 py-1
             text-slate-700
             placeholder:text-slate-400
